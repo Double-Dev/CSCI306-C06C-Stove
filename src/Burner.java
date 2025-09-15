@@ -64,11 +64,29 @@ public class Burner {
 			timer = 0;
 			switch (this.mySetting) {
 			case Setting.OFF:
-				minusButton();
+				if (myTemperature == Temperature.BLAZING) {
+					myTemperature = Temperature.HOT;
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.HOT) {
+					myTemperature = Temperature.WARM;
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.WARM) {
+					myTemperature = Temperature.COLD;
+				}
 				break;
 			case Setting.LOW:
 				if (myTemperature == Temperature.COLD) {
 					myTemperature = Temperature.WARM;
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.HOT) {
+					myTemperature = Temperature.WARM;
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.BLAZING) {
+					myTemperature = Temperature.HOT;
 					timer = TIME_DURATION;
 				}
 				break;
@@ -78,6 +96,10 @@ public class Burner {
 					timer = TIME_DURATION;
 				}
 				else if (myTemperature == Temperature.WARM) {
+					myTemperature = Temperature.HOT;
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.BLAZING) {
 					myTemperature = Temperature.HOT;
 					timer = TIME_DURATION;
 				}
