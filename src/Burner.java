@@ -64,52 +64,48 @@ public class Burner {
 			timer = 0;
 			switch (this.mySetting) {
 			case Setting.OFF:
+				// If OFF, decreases temperature (stays at COLD)
 				if (myTemperature == Temperature.BLAZING) {
 					myTemperature = Temperature.HOT;
 					timer = TIME_DURATION;
-				}
-				else if (myTemperature == Temperature.HOT) {
+				} else if (myTemperature == Temperature.HOT) {
 					myTemperature = Temperature.WARM;
 					timer = TIME_DURATION;
-				}
-				else if (myTemperature == Temperature.WARM) {
+				} else if (myTemperature == Temperature.WARM) {
 					myTemperature = Temperature.COLD;
 				}
 				break;
 			case Setting.LOW:
+				// If LOW, move temperature closer to WARM (stays at WARM)
 				if (myTemperature == Temperature.COLD) {
 					myTemperature = Temperature.WARM;
-				}
-				else if (myTemperature == Temperature.HOT) {
+				} else if (myTemperature == Temperature.HOT) {
 					myTemperature = Temperature.WARM;
-				}
-				else if (myTemperature == Temperature.BLAZING) {
+				} else if (myTemperature == Temperature.BLAZING) {
 					myTemperature = Temperature.HOT;
 					timer = TIME_DURATION;
 				}
 				break;
 			case Setting.MEDIUM:
+				// If MEDIUM, move temperature closer to HOT (stays at HOT)
 				if (myTemperature == Temperature.COLD) {
 					myTemperature = Temperature.WARM;
 					timer = TIME_DURATION;
-				}
-				else if (myTemperature == Temperature.WARM) {
+				} else if (myTemperature == Temperature.WARM) {
 					myTemperature = Temperature.HOT;
-				}
-				else if (myTemperature == Temperature.BLAZING) {
+				} else if (myTemperature == Temperature.BLAZING) {
 					myTemperature = Temperature.HOT;
 				}
 				break;
 			case Setting.HIGH:
+				// If HIGH, increase temperature (stays at BLAZING)
 				if (myTemperature == Temperature.COLD) {
 					myTemperature = Temperature.WARM;
 					timer = TIME_DURATION;
-				}
-				else if (myTemperature == Temperature.WARM) {
+				} else if (myTemperature == Temperature.WARM) {
 					myTemperature = Temperature.HOT;
 					timer = TIME_DURATION;
-				}
-				else if (myTemperature == Temperature.HOT) {
+				} else if (myTemperature == Temperature.HOT) {
 					myTemperature = Temperature.BLAZING;
 				}
 				break;
