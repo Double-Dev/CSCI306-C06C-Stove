@@ -68,31 +68,31 @@ public class Burner {
 				break;
 			case Setting.LOW:
 				if (myTemperature == Temperature.COLD) {
-					plusButton();
+					myTemperature = Temperature.WARM;
 					timer = TIME_DURATION;
 				}
 				break;
 			case Setting.MEDIUM:
 				if (myTemperature == Temperature.COLD) {
-					plusButton();
+					myTemperature = Temperature.WARM;
 					timer = TIME_DURATION;
 				}
 				else if (myTemperature == Temperature.WARM) {
-					plusButton();
+					myTemperature = Temperature.HOT;
 					timer = TIME_DURATION;
 				}
 				break;
 			case Setting.HIGH:
 				if (myTemperature == Temperature.COLD) {
-					plusButton();
+					myTemperature = Temperature.WARM;
 					timer = TIME_DURATION;
 				}
 				else if (myTemperature == Temperature.WARM) {
-					plusButton();
+					myTemperature = Temperature.HOT;
 					timer = TIME_DURATION;
 				}
 				else if (myTemperature == Temperature.HOT) {
-					plusButton();
+					myTemperature = Temperature.BLAZING;
 					timer = TIME_DURATION;
 				}
 				break;
