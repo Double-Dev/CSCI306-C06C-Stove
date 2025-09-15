@@ -25,11 +25,37 @@ public class Burner {
 	}
 
 	public void plusButton() {
-		// TODO Implement method
+		switch (this.mySetting) {
+		case Setting.OFF:
+			mySetting = Setting.LOW;
+			break;
+		case Setting.LOW:
+			mySetting = Setting.MEDIUM;
+			break;
+		case Setting.MEDIUM:
+			mySetting = Setting.HIGH;
+			break;
+		case Setting.HIGH:
+			break;
+		}
+		timer = TIME_DURATION;
 	}
 
 	public void minusButton() {
-		// TODO Implement method
+		switch (this.mySetting) {
+		case Setting.HIGH:
+			this.mySetting = Setting.MEDIUM;
+			break;
+		case Setting.MEDIUM:
+			this.mySetting = Setting.LOW;
+			break;
+		case Setting.LOW:
+			this.mySetting = Setting.OFF;
+			break;
+		case Setting.OFF:
+			break;
+		}
+		timer = TIME_DURATION;
 	}
 
 	public void updateTemperature() {
