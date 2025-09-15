@@ -33,7 +33,17 @@ public class Stove {
 	 * Date: 9/15/2025
 	 */
 	public void displayStove() {
-
+		boolean isBlazing = false;
+		for (int i = 0; i < NUM_BURNERS; i++) {
+			this.burners.get(i).display();
+			// isBlazing will preserve whether a blazing burner has been found.
+			if (this.burners.get(i).getTemperature() == Burner.Temperature.BLAZING) {
+				isBlazing = true;
+			}
+		}
+		if (isBlazing) {
+			System.out.println("RED LIGHT - HOT BURNER ALERT");
+		}
 	}
 	
 	/**

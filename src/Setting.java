@@ -1,5 +1,6 @@
 /**
  * Setting enum
+ * An enum that relates a string value to a particular setting.
  * 
  * @author Deven Layton
  * @author Joseph Chamberlain

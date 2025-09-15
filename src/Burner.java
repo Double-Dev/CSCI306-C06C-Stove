@@ -1,6 +1,8 @@
 /**
  * Burner class
- * 
+ * Holds the temperature, setting, and timer values for the burner. A burner can be set through its plusButton() and
+ * minuxButton() methods. When updateTemperature() is called, the burner's temperature will update based on how
+ * long it has been at a particular setting.
  * 
  * @author Deven Layton
  * @author Joseph Chamberlain
@@ -35,6 +37,24 @@ public class Burner {
 	}
 	
 	public void display() {
-		// TODO Implement method
+		System.out.print("[" + this.mySetting + "].....");
+		switch (this.myTemperature) {
+		case Temperature.BLAZING:
+			System.out.println("VERY HOT! DON'T TOUCH");
+			break;
+		case Temperature.HOT:
+			System.out.println("CAREFUL");
+			break;
+		case Temperature.WARM:
+			System.out.println("warm");
+			break;
+		case Temperature.COLD:
+			System.out.println("cooool");
+			break;
+		}
+	}
+
+	public Temperature getTemperature() {
+		return myTemperature;
 	}
 }
