@@ -59,7 +59,45 @@ public class Burner {
 	}
 
 	public void updateTemperature() {
-		// TODO Implement method
+		timer--;
+		if (timer <= 0) {
+			timer = 0;
+			switch (this.mySetting) {
+			case Setting.OFF:
+				minusButton();
+				break;
+			case Setting.LOW:
+				if (myTemperature == Temperature.COLD) {
+					plusButton();
+					timer = TIME_DURATION;
+				}
+				break;
+			case Setting.MEDIUM:
+				if (myTemperature == Temperature.COLD) {
+					plusButton();
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.WARM) {
+					plusButton();
+					timer = TIME_DURATION;
+				}
+				break;
+			case Setting.HIGH:
+				if (myTemperature == Temperature.COLD) {
+					plusButton();
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.WARM) {
+					plusButton();
+					timer = TIME_DURATION;
+				}
+				else if (myTemperature == Temperature.HOT) {
+					plusButton();
+					timer = TIME_DURATION;
+				}
+				break;
+			}
+		}
 	}
 	
 	public void display() {
