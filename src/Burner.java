@@ -58,7 +58,7 @@ public class Burner {
 		timer = TIME_DURATION;
 	}
 
-	public void updateTemperature() {
+	public void updateTemperature() { // Increases, decreases, or stays the same based off of both temp and setting.
 		timer--;
 		if (timer <= 0) {
 			timer = 0;
@@ -79,11 +79,9 @@ public class Burner {
 			case Setting.LOW:
 				if (myTemperature == Temperature.COLD) {
 					myTemperature = Temperature.WARM;
-					timer = TIME_DURATION;
 				}
 				else if (myTemperature == Temperature.HOT) {
 					myTemperature = Temperature.WARM;
-					timer = TIME_DURATION;
 				}
 				else if (myTemperature == Temperature.BLAZING) {
 					myTemperature = Temperature.HOT;
@@ -97,11 +95,9 @@ public class Burner {
 				}
 				else if (myTemperature == Temperature.WARM) {
 					myTemperature = Temperature.HOT;
-					timer = TIME_DURATION;
 				}
 				else if (myTemperature == Temperature.BLAZING) {
 					myTemperature = Temperature.HOT;
-					timer = TIME_DURATION;
 				}
 				break;
 			case Setting.HIGH:
@@ -115,7 +111,6 @@ public class Burner {
 				}
 				else if (myTemperature == Temperature.HOT) {
 					myTemperature = Temperature.BLAZING;
-					timer = TIME_DURATION;
 				}
 				break;
 			}
