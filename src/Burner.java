@@ -60,7 +60,7 @@ public class Burner {
 
 	public void updateTemperature() { // Increases, decreases, or stays the same based off of both temp and setting.
 		timer--;
-		if (timer <= 0) {
+		if (timer < 1) {
 			timer = 0;
 			switch (this.mySetting) {
 			case Setting.OFF:
