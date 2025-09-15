@@ -28,6 +28,9 @@ public class Stove {
 	 * Display the current stove status
 	 *  
 	 **** You must write the following method ****
+	 * @author Deven Layton
+	 * @author Joseph Chamberlain
+	 * Date: 9/15/2025
 	 */
 	public void displayStove() {
 
